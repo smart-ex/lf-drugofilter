@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DrugoFilter!</title>
+  <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js" type="text/javascript"></script>
+  <script src="./index.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" href="./style.css">
+  <script>
+  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+  ':35729/livereload.js?snipver=1"></' + 'script>')
+</script> 
+</head>
+<body>
+    <div id="homework-container">
+    <div class="wrapper">
+        <header>
+            <h2>Выберите друзей</h2>
+            <div class="close"></div>
+        </header>
+        <div class="filter">
+            <div class="col">
+                <input type="text" name="friends" placeholder="Начинайте вводить имя друга">
+            <h3>Ваши друзья</h3>
+            </div>
+            <div class="col">
+                <input type="text" name="friendsInList" placeholder="Начинайте вводить имя друга">
+                <h3>Друзья в списке</h3>
+
+            </div>
+        </div>
+        <div class="main">
+            <div class="col">
+                
+                <div class="list">
+                    
+                </div>
+            </div>
+            <div class="col">
+                <div class="list selected">
+                    
+                </div>
+            </div>
+        </div>
+        <footer>
+            <button>Сохранить</button>
+        </footer>
+    </div>
+</div>
+<script type="text/x-handlebars-template" id="userTemplate">
+    {{#each list}}
+<div class="item" id="id_{{id}}" draggable="true">
+                        <div class="avatar">
+                            <img src="{{photo_100}}" alt="">
+                        </div>
+                        <div class="name">{{first_name}} {{last_name}}</div>
+                        <div class="action"></div>
+                    </div>
+        {{/each}}
+</script>
+
+</body>
+
+</html>

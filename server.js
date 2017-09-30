@@ -1,0 +1,18 @@
+var livereload = require("livereload");
+var server = livereload.createServer();
+
+var static = require("node-static");
+
+var file = new static.Server("./dist");
+
+require("http")
+    .createServer(function(request, response) {
+        request
+            .addListener("end", function() {
+                file.serve(request, response);
+            })
+            .resume();
+    })
+    .listen(8888);
+
+server.watch(__dirname + "/dist");

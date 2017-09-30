@@ -1,0 +1,18 @@
+{
+  "name": "lf-drugofilter",
+  "version": "1.0.0",
+  "description": "DrugoFilter homework",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d dist --copy-files",
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "livereload": "^0.6.2",
+    "node-static": "^0.7.10"
+  },
+  "dependencies": {}
+}
